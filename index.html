@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./faws/css/all.css">
+</head>
+<body>
+    <div id="game">
+        <div id="sudoku">
+            <div id="boxgame"></div>
+            <div id="action">
+                <button class="btn-new-game">
+                    New Game
+                </button>
+                <div class="game-action">
+                    <div class="action-undo">
+                        <button id="undo" class="btn-action">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                        <span class="describe-action">Undo</span>
+                        
+                    </div>
+                    <div class="action-erase">
+                        <button id="erase" class="btn-action" isErase="false">
+                            <i class="fa-solid fa-eraser"></i>
+                        </button>
+                        <span class="describe-action">Erase</span>
+                        
+                    </div>
+                    <div  class="action-pencil">
+                        <button id="note" class="btn-action" isNote="false">
+                            <i class="fa-solid fa-pencil"></i>
+                            <span class="toggle">OFF</span>
+                        </button>
+                        <span class="describe-action">Note</span>
+                    </div>
+                    <div class="action-hint">
+                        <button class="btn-action">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </button>
+                        <span class="describe-action">Hint</span>
+                    </div>
+                </div>
+                <div class="keyboard">
+                    <button numpad="1" class="numpad-item">1</button>
+                    <button numpad="2" class="numpad-item">2</button>
+                    <button numpad="3" class="numpad-item">3</button>
+                    <button numpad="4" class="numpad-item">4</button>
+                    <button numpad="5" class="numpad-item">5</button>
+                    <button numpad="6" class="numpad-item">6</button>
+                    <button numpad="7" class="numpad-item">7</button>
+                    <button numpad="8" class="numpad-item">8</button>
+                    <button numpad="9" class="numpad-item">9</button>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="./sudoku.js"></script>
+</body>
+</html>

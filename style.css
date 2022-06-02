@@ -1,0 +1,235 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#game{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#sudoku{
+    display: flex;
+}
+#boxgame{
+    margin-right: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 540px;
+    height: 540px;
+    position: relative;
+    border: 3px solid #000;
+}
+.squareBig,.squareSM,.squareDraft{  
+    width: 33.33333%;
+    height: 33.33333%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+}
+.squareDraft{
+    color: #666;
+    user-select: none;
+}
+.squareBig:nth-child(1){
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.squareBig:nth-child(2){
+    border-bottom: 2px solid #000;
+}
+.squareBig:nth-child(3){
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.squareBig:nth-child(4){
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.squareBig:nth-child(5){
+    border-bottom: 2px solid #000;
+}
+.squareBig:nth-child(6){
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+.squareBig:nth-child(7){
+    border-right: 2px solid #000;
+}   
+.squareBig:nth-child(9){
+    border-left: 2px solid #000;
+}
+
+.squareBig .squareSM:nth-child(1){
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.squareBig .squareSM:nth-child(2){
+    border-bottom: 2px solid #ccc;
+}
+.squareBig .squareSM:nth-child(3){
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.squareBig .squareSM:nth-child(4){
+    border-right: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.squareBig .squareSM:nth-child(5){
+    border-bottom: 2px solid #ccc;
+}
+.squareBig .squareSM:nth-child(6){
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.squareBig .squareSM:nth-child(7){
+    border-right: 2px solid #ccc;
+}   
+.squareBig .squareSM:nth-child(9){
+    border-left: 2px solid #ccc;
+}
+
+#action{
+    display: flex;
+    width: 360px;
+    height: 540px;
+    flex-direction: column;
+    align-content: space-between;
+}
+input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    cursor: default;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    opacity: 0;
+}
+.textNumber{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    font-size: 32px;
+    justify-content: center;
+    align-items: center;
+}
+.bowl{
+    background-color:rgba(169, 187, 195, 0.2)
+}
+.bold{
+    background-color:rgba(126, 219, 255, 0.9)
+}
+.btn-new-game{
+    width: 100%;
+    height: 60px;
+    border-radius:5px ;
+    outline: none;
+    border: none;
+    background-color: #0072e3;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.btn-new-game:hover{
+    background-color: #0065c8;
+}
+.game-action{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+.btn-action{
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    color: #1b80e4;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #eaeef4;
+}
+
+.describe-action{
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #1b80e4;
+    font-weight: 600;
+}
+.btn-action:hover{
+    background-color: #dce3ed;
+}
+.keyboard{
+    margin-top: 20px;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+
+}
+.numpad-item{
+    width: 26%;
+    height: 26%;
+    font-size: 36px;
+    color: #1b80e4;
+    border: none;
+    background-color: #eaeef4;
+    cursor: pointer;
+}
+.numpad-item:hover{
+    background-color: #dce3ed;
+}
+/* .numpad-item:nth-child(3n+2){
+    margin: 0 4px 12px 4px; 
+} */
+.glow{
+    color: #1b80e4;
+}
+.toggle{
+    position: absolute;
+    z-index: 1;
+    top: -8%;
+    left: 66%;
+    display: flex;
+    width: 30px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #adb6c2;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    transform: translateZ(0);
+    transition: background-color .1s ease-in-out;
+}
+.focus{
+    border: 1px solid #1b80e4;
+}
+.show {
+    transition: opacity 400ms;
+}
+.hide {
+    opacity: 0;
+}
+.textNumber[istrue="true"]{
+    color: #009e1a;
+}
+.textNumber[istrue="false"]{
+    color: #ff4c4c;
+}
+input {
+    cursor: url('./cuctay.svg');
+}
